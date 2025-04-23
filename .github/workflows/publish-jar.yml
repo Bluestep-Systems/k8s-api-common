@@ -1,4 +1,4 @@
-name: Build and Push Docker k8s-api-web and kubectl Image CI
+name: Publish k8s-api jar file CI
 
 on: 
   workflow_dispatch:
