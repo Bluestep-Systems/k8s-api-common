@@ -31,5 +31,5 @@ jobs:
       - name: Publish package
         run: ./gradlew publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ACTOR: ${{ github.actor }}
+          BLUESTEP_TOKEN: ${{ secrets.BLUESTEP_TOKEN }}
+          BLUESTEP_ACTOR: ${{ secrets.BLUESTEP_ACTOR }}
