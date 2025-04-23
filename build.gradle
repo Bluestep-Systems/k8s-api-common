@@ -1,0 +1,43 @@
+plugins {
+	id 'java'
+	id 'maven-publish' 
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+		}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.12.3'
+}
+
+description = 'bluestep-k8s-api-common'
+
+jar {
+  enabled = true
+}
+
+// Add the publishing configuration
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/Bluestep-Systems/k8s-api-common")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+                password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+}
