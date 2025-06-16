@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.19.0'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.19.1'
 }
 
 description = 'bluestep-k8s-api-common'
